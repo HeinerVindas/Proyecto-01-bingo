@@ -9,7 +9,7 @@
 #include <vector>
 using namespace std;
 
-int game(const char*arg, string ar)
+int game(long long int ns, const char*arg, string ar)
 {
     int numb=0;
     int veco[75];//vector que contiene numeros ordenados
@@ -85,6 +85,7 @@ int game(const char*arg, string ar)
 }
     int m=0;
     int k=0;
+    int y=0;
     while(k<75)
         {
                 std::cout << "Press ENTER to continue...";
@@ -164,7 +165,11 @@ int game(const char*arg, string ar)
                      {
                          std::cout<<"winner: card_" << winner;
                           std::cout<<endl;
-                          return 0;
+                          if(y==ns)
+                          {
+                              return 0;
+                              }
+                              y++;
                      }
 
                }
@@ -225,7 +230,11 @@ int game(const char*arg, string ar)
                      {
                          std::cout<<"winner: card_" << winner;
                           std::cout<<endl;
-                          return 0;
+                          if(y==ns)
+                          {
+                              return 0;
+                              }
+                              y++;
                      }
                      corner1+=24;
                                corner2+=24;
@@ -292,7 +301,11 @@ int game(const char*arg, string ar)
                      {
                          std::cout<<"winner: card_" << winner;
                           std::cout<<endl;
-                          return 0;
+                          if(y==ns)
+                          {
+                              return 0;
+                              }
+                              y++;
                      }
                      corner1+=24;
                                corner2+=24;
@@ -354,7 +367,11 @@ int game(const char*arg, string ar)
                      {
                          std::cout<<"winner: card_" << winner;
                           std::cout<<endl;
-                          return 0;
+                          if(y==ns)
+                          {
+                              return 0;
+                              }
+                              y++;
                      }
                      corner1+=24;
                                corner2+=24;

@@ -14,6 +14,7 @@ using namespace std;
 int print_help();
 int print_version();
 long long int num;
+long long int ns;
 char*files;
 char*check;
 const char* texts="numbers.txt";
@@ -63,24 +64,17 @@ int analyze_params(int argc, char* argv[])
         std::ifstream checke(argv[i+1]);
         if ( ! checke )//error
         {
-              std::cerr << "toc: could not open k " << argv[i+1] << std::endl;
+              std::cerr << "toc: could not open " << argv[i+1] << std::endl;
               return 1;
          }
          check=argv[i+1];
           checker(check, texts);
       }else if(strcmp(argv[i], "-t") == 0){
           win=(argv[i+1]);
+      }else if(strcmp(argv[i], "-w") == 0){
+          ns=atoll(argv[i+1]);
       }else if ( strcmp(argv[i], "call") == 0 ){
-         /**if ( strcmp(argv[i+1], "-s") == 0 ){
-        std::ifstream cal(argv[i+2]);
-        if ( ! cal )//error
-        {
-              std::cerr << "toc: could not open " << argv[i+2] << std::endl;
-              return 1;
-         }
-         texts=argv[i+2];
-         } */
-           game(texts,win);
+           game(ns,texts,win);
          }
    }
     return 0;
