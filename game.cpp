@@ -37,7 +37,7 @@ int game(const char*arg, const char*ar)
             index_vector.push_back(lin);
             nu++;
         }
-        char matr[nu*25];
+        char matr[nu*24];
          while(std::getline(text,lines))
          {
              my_vector.push_back(lines);
@@ -85,35 +85,47 @@ int game(const char*arg, const char*ar)
                     n++;
                 }
                 line_vector.at(n)=new_vector.at(m);
-                if(ar=="blackout")
+
+                int number=0;
+                string letters[5]={"B","I","N","G","O"};
+               for(int b=0; b<5; b++)
+               {
+                   std::cout << letters[b] << " ";
+                   for(int c=0; c<15; c++)
+                   {
+
+                      {
+                          std::cout << line_vector.at(number) << " ";
+                      }
+                       number++;
+                   }
+                   std::cout << endl;
+               }
+               if(ar=="blackout")
                     {
                          for(int e=0; e<nu; e++)
                          {
                               size_t pos = index_vector.at(e).find(new_vector.at(m));
-                              size_t pos_l = index_vector.at(e).find("*****");
                                temp = e+1;
-                               cont = 25*temp;
-                               temp_t = 25*e;
-                               int k;
-                 for(k = temp_t; k<cont; k++)
+                               cont = 24*temp;
+                               temp_t = 24*e;
+                               int h;
+                 for(h = temp_t; h<cont; h++)
                               {
-                                if(matr[k]!='y')
+                                if(matr[h]!='x')
                                 {
                                    if(pos==std::string::npos)
                                {
-                                   matr[k]='x';
-                               }else
-                               if(pos_l==std::string::npos)
-                               {
-                                   matr[k]='x';
+                                   matr[h]='-';
                                }else
                                {
-                                   matr[k]='y';
+                                   matr[h]='x';
                                    pos=std::string::npos;
-                                   pos_l=std::string::npos;
                                }
                                }
+                               std::cout<<matr[h];
                           }
+                          std::cout<<endl;
                           }
                           temp = 0;
                                cont = 0;
@@ -122,23 +134,21 @@ int game(const char*arg, const char*ar)
                {
                    int winner=i+1;
                  temp = i+1;
-                 cont = 25*temp;
-                 temp_t = 25*i;
+                 cont = 24*temp;
+                 temp_t = 24*i;
                  /**if(i!=0)
                  {
                      temp_t +=1;
                  }*/
-                 int k;
-                 for(k = temp_t; k<cont; k++)
+                 int h;
+                 for(h = temp_t; h<cont; h++)
                      {
-                         if(matr[k]!='y')
+                         if(matr[h]!='x')
                          {
-                             k=1000000;
+                             h=1000000;
                          }
                      }
-                      std::cout<<k;
-                      std::cout<<endl;
-                     if(k!=1000001)
+                     if(h!=1000001)
                      {
                          std::cout<<"winner: card_" << winner;
                           std::cout<<endl;
@@ -167,21 +177,6 @@ int game(const char*arg, const char*ar)
                         return 1;
                     }
                 m++;
-                int number=0;
-                string letters[5]={"B","I","N","G","O"};
-               for(int b=0; b<5; b++)
-               {
-                   std::cout << letters[b] << " ";
-                   for(int c=0; c<15; c++)
-                   {
-
-                      {
-                          std::cout << line_vector.at(number) << " ";
-                      }
-                       number++;
-                   }
-                   std::cout << endl;
-               }
            k++;
         }
         return 0;
