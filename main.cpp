@@ -17,7 +17,7 @@ long long int num;
 char*files;
 char*check;
 const char* texts="numbers.txt";
-const char* win="blackout";
+string win="blackout";
 
 int analyze_params(int argc, char* argv[])
 {

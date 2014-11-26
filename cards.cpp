@@ -46,7 +46,7 @@ int card(long long int nums, char*ar, const char*arg)
                      int z=0;
                      int nu=12;
                      std::ofstream index;
-                     index.open("index.idx", std::ifstream::out);
+                     index.open("index1.idx", std::ifstream::out);
                      for(int a=0; a<nums; a++)
                      {
                          std::string lin;
@@ -56,14 +56,30 @@ int card(long long int nums, char*ar, const char*arg)
 
                              lin.append(my_vector.at(matr[z]));
                              lin.append(" ");
-                            }else{
-                                lin.append(center);
-                                lin.append(" ");
                             }
                             z++;
                          }
                             nu+=25;
                            index<<lin<<endl;
+                     }
+                    index.close();
+                     z=0;
+                     nu=12;
+                     index.open("index2.idx", std::ifstream::out);
+                     for(int a=0; a<nums; a++)
+                     {
+                         std::string lin;
+                         for(int b=0; b<25; b++)
+                         {
+                             if (z!=nu){
+
+                             lin.append(my_vector.at(matr[z]));
+                             lin.append("\n");
+                            }
+                            z++;
+                         }
+                            nu+=25;
+                           index<<lin;
                      }
                     index.close();
                  }

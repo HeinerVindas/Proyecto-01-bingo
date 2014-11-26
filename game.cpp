@@ -9,7 +9,7 @@
 #include <vector>
 using namespace std;
 
-int game(const char*arg, const char*ar)
+int game(const char*arg, string ar)
 {
     int numb=0;
     int veco[75];//vector que contiene numeros ordenados
@@ -22,14 +22,22 @@ int game(const char*arg, const char*ar)
     std::ifstream text(arg);//toma texto
     std::string lines;
     std::string lin;
-     std::ifstream index("index.idx");
+    std::string li;
+     std::ifstream index("index1.idx");
+     std::ifstream ind("index2.idx");
      if ( ! index)//error
              {
-                   std::cerr << "toc: could not open " << "index.idx" << std::endl;
+                   std::cerr << "toc: could not open " << "index1.idx" << std::endl;
+                   return 1;
+              }
+              if ( ! ind)//error
+             {
+                   std::cerr << "toc: could not open " << "index2.idx" << std::endl;
                    return 1;
               }
     std::vector<std::string> my_vector;//vector de apuntador
     std::vector<std::string> index_vector;
+    std::vector<std::string> ind_vector;
     std::vector<std::string> line_vector;//vector de apuntador
          std::vector<std::string> new_vector;//nuevo vector
           while(std::getline(index,lin))
@@ -37,6 +45,10 @@ int game(const char*arg, const char*ar)
             index_vector.push_back(lin);
             nu++;
         }
+        while(std::getline(ind,li))
+        {
+            ind_vector.push_back(li);
+            }
         char matr[nu*24];
          while(std::getline(text,lines))
          {
@@ -158,7 +170,68 @@ int game(const char*arg, const char*ar)
                }
                     }else if(ar=="four-corners")
                     {
-
+                        int corner1=0;
+                        int corner2=4;
+                        int corner3=19;
+                        int corner4=23;
+                         for(int e=0; e<nu; e++)
+                         {
+                               temp = e+1;
+                               cont = 24*temp;
+                               temp_t = 24*e;
+                               int h;
+                 for(h = temp_t; h<cont; h++)
+                              {
+                                  if(matr[h]!='x')
+                                {
+                                    if(ind_vector.at(corner1)==new_vector.at(m))
+                                {
+                                   matr[corner1]='x';
+                               }else if(ind_vector.at(corner2)==new_vector.at(m))
+                               {
+                                   matr[corner2]='x';
+                               }else if(ind_vector.at(corner3)==new_vector.at(m))
+                               {
+                                   matr[corner3]='x';
+                               }else if(ind_vector.at(corner4)==new_vector.at(m))
+                               {
+                                   matr[corner4]='x';
+                               }else
+                               {
+                                   matr[h]='-';
+                               }
+                               }
+                               std::cout<<matr[h];
+                          }
+                          corner1+=24;
+                               corner2+=24;
+                               corner3+=24;
+                               corner4+=24;
+                          std::cout<<endl;
+                          }
+                               corner1=0;
+                        corner2=4;
+                        corner3=19;
+                        corner4=23;
+                 for (int i=0; i<nu; i++)
+               {
+                   int winner=i+1;
+                 int h=2;
+                 if(matr[corner1]!='x'||matr[corner2]!='x'||matr[corner3]!='x'||matr[corner4]!='x')
+                 {
+                     h=1;
+                 }
+                     if(h==2)
+                     {
+                         std::cout<<"winner: card_" << winner;
+                          std::cout<<endl;
+                          return 0;
+                     }
+                     corner1+=24;
+                               corner2+=24;
+                               corner3+=24;
+                               corner4+=24;
+                     }
                     }else if(ar=="straight-line")
                     {
 
