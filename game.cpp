@@ -246,7 +246,7 @@ int game(long long int ns, const char*arg, string ar)
 
                     }else if(ar=="diagonal")
                     {
-                                                 int corner1=0;
+                        int corner1=0;
                         int corner2=6;
                         int corner3=17;
                         int corner4=23;
@@ -285,7 +285,7 @@ int game(long long int ns, const char*arg, string ar)
                                corner4+=24;
                           std::cout<<endl;
                           }
-                               corner1=0;
+                        corner1=0;
                         corner2=6;
                         corner3=17;
                         corner4=23;
@@ -383,6 +383,418 @@ int game(long long int ns, const char*arg, string ar)
 
                     }else if(ar=="roving-L")
                     {
+                        int corner1=0;
+                        int corner2=1;
+                        int corner3=2;
+                        int corner4=3;
+                        int corner5=4;
+                        int corner6=9;
+                        int corner7=13;
+                        int corner8=18 ;
+                        int corner9=23 ;
+                         for(int e=0; e<nu; e++)
+                         {
+                               temp = e+1;
+                               cont = 24*temp;
+                               temp_t = 24*e;
+                               int h;
+                 for(h = temp_t; h<cont; h++)
+                              {
+                                  if(matr[h]!='x')
+                                {
+                                    if(ind_vector.at(corner1)==new_vector.at(m))
+                                {
+                                   matr[corner1]='x';
+                               }else if(ind_vector.at(corner2)==new_vector.at(m))
+                               {
+                                   matr[corner2]='x';
+                               }else if(ind_vector.at(corner3)==new_vector.at(m))
+                               {
+                                   matr[corner3]='x';
+                               }else if(ind_vector.at(corner4)==new_vector.at(m))
+                               {
+                                   matr[corner4]='x';
+                               }else if(ind_vector.at(corner5)==new_vector.at(m))
+                               {
+                                   matr[corner5]='x';
+                               }else if(ind_vector.at(corner6)==new_vector.at(m))
+                               {
+                                   matr[corner6]='x';
+                               }else if(ind_vector.at(corner7)==new_vector.at(m))
+                               {
+                                   matr[corner7]='x';
+                               }else if(ind_vector.at(corner8)==new_vector.at(m))
+                               {
+                                   matr[corner8]='x';
+                               }else if(ind_vector.at(corner9)==new_vector.at(m))
+                               {
+                                   matr[corner9]='x';
+                               }
+                               else
+                               {
+                                   matr[h]='-';
+                               }
+                               }
+                               std::cout<<matr[h];
+                          }
+                          corner1+=24;
+                               corner2+=24;
+                               corner3+=24;
+                               corner4+=24;
+                               corner5+=24;
+                               corner6+=24;
+                               corner7+=24;
+                               corner8+=24;
+                               corner9+=24;
+                          std::cout<<endl;
+                          }
+                        corner1=0;
+                        corner2=1;
+                        corner3=2;
+                        corner4=3;
+                        corner5=4;
+                        corner6=9;
+                        corner7=13;
+                        corner8=18;
+                        corner9=23;
+
+                 for (int i=0; i<nu; i++)
+               {
+                   int winner=i+1;
+                 int h=2;
+                 if(matr[corner1]!='x'||matr[corner2]!='x'||matr[corner3]!='x'||matr[corner4]!='x'||matr[corner5]!='x'||matr[corner6]!='x'||matr[corner7]!='x'||matr[corner8]!='x'||matr[corner9]!='x')
+                 {
+                     h=1;
+                 }
+                     if(h==2)
+                     {
+                         std::cout<<"winner: card_" << winner;
+                          std::cout<<endl;
+                          if(y==ns)
+                          {
+                              return 0;
+                              }
+                              y++;
+                     }
+                     corner1+=24;
+                     corner2+=24;
+                    corner3+=24;
+                    corner4+=24;
+                    corner5+=24;
+                    corner6+=24;
+                    corner7+=24;
+                    corner8+=24;
+                    corner9+=24;
+                     }
+                      corner1=0;
+                      corner2=5;
+                      corner3=10;
+                      corner4=14;
+                      corner5=19;
+                      corner6=20;
+                      corner7=21;
+                      corner8=22 ;
+                      corner9=23 ;
+                         for(int e=0; e<nu; e++)
+                         {
+                               temp = e+1;
+                               cont = 24*temp;
+                               temp_t = 24*e;
+                               int h;
+                 for(h = temp_t; h<cont; h++)
+                              {
+                                  if(matr[h]!='x')
+                                {
+                                    if(ind_vector.at(corner1)==new_vector.at(m))
+                                {
+                                   matr[corner1]='x';
+                               }else if(ind_vector.at(corner2)==new_vector.at(m))
+                               {
+                                   matr[corner2]='x';
+                               }else if(ind_vector.at(corner3)==new_vector.at(m))
+                               {
+                                   matr[corner3]='x';
+                               }else if(ind_vector.at(corner4)==new_vector.at(m))
+                               {
+                                   matr[corner4]='x';
+                               }else if(ind_vector.at(corner5)==new_vector.at(m))
+                               {
+                                   matr[corner5]='x';
+                               }else if(ind_vector.at(corner6)==new_vector.at(m))
+                               {
+                                   matr[corner6]='x';
+                               }else if(ind_vector.at(corner7)==new_vector.at(m))
+                               {
+                                   matr[corner7]='x';
+                               }else if(ind_vector.at(corner8)==new_vector.at(m))
+                               {
+                                   matr[corner8]='x';
+                               }else if(ind_vector.at(corner9)==new_vector.at(m))
+                               {
+                                   matr[corner9]='x';
+                               }
+                               else
+                               {
+                                   matr[h]='-';
+                               }
+                               }
+                               std::cout<<matr[h];
+                          }
+                          corner1+=24;
+                               corner2+=24;
+                               corner3+=24;
+                               corner4+=24;
+                               corner5+=24;
+                               corner6+=24;
+                               corner7+=24;
+                               corner8+=24;
+                               corner9+=24;
+                          std::cout<<endl;
+                          }
+                     corner1=0;
+                      corner2=5;
+                      corner3=10;
+                      corner4=14;
+                      corner5=19;
+                      corner6=20;
+                      corner7=21;
+                      corner8=22 ;
+                      corner9=23 ;
+
+                 for (int i=0; i<nu; i++)
+               {
+                   int winner=i+1;
+                 int h=2;
+                 if(matr[corner1]!='x'||matr[corner2]!='x'||matr[corner3]!='x'||matr[corner4]!='x'||matr[corner5]!='x'||matr[corner6]!='x'||matr[corner7]!='x'||matr[corner8]!='x'||matr[corner9]!='x')
+                 {
+                     h=1;
+                 }
+                     if(h==2)
+                     {
+                         std::cout<<"winner: card_" << winner;
+                          std::cout<<endl;
+                          if(y==ns)
+                          {
+                              return 0;
+                              }
+                              y++;
+                     }
+                     corner1+=24;
+                     corner2+=24;
+                    corner3+=24;
+                    corner4+=24;
+                    corner5+=24;
+                    corner6+=24;
+                    corner7+=24;
+                    corner8+=24;
+                    corner9+=24;
+                     }
+                     corner1=4;
+                      corner2=9;
+                      corner3=13;
+                      corner4=18;
+                      corner5=19;
+                      corner6=20;
+                      corner7=21;
+                      corner8=22 ;
+                      corner9=23 ;
+                         for(int e=0; e<nu; e++)
+                         {
+                               temp = e+1;
+                               cont = 24*temp;
+                               temp_t = 24*e;
+                               int h;
+                 for(h = temp_t; h<cont; h++)
+                              {
+                                  if(matr[h]!='x')
+                                {
+                                    if(ind_vector.at(corner1)==new_vector.at(m))
+                                {
+                                   matr[corner1]='x';
+                               }else if(ind_vector.at(corner2)==new_vector.at(m))
+                               {
+                                   matr[corner2]='x';
+                               }else if(ind_vector.at(corner3)==new_vector.at(m))
+                               {
+                                   matr[corner3]='x';
+                               }else if(ind_vector.at(corner4)==new_vector.at(m))
+                               {
+                                   matr[corner4]='x';
+                               }else if(ind_vector.at(corner5)==new_vector.at(m))
+                               {
+                                   matr[corner5]='x';
+                               }else if(ind_vector.at(corner6)==new_vector.at(m))
+                               {
+                                   matr[corner6]='x';
+                               }else if(ind_vector.at(corner7)==new_vector.at(m))
+                               {
+                                   matr[corner7]='x';
+                               }else if(ind_vector.at(corner8)==new_vector.at(m))
+                               {
+                                   matr[corner8]='x';
+                               }else if(ind_vector.at(corner9)==new_vector.at(m))
+                               {
+                                   matr[corner9]='x';
+                               }
+                               else
+                               {
+                                   matr[h]='-';
+                               }
+                               }
+                               std::cout<<matr[h];
+                          }
+                          corner1+=24;
+                               corner2+=24;
+                               corner3+=24;
+                               corner4+=24;
+                               corner5+=24;
+                               corner6+=24;
+                               corner7+=24;
+                               corner8+=24;
+                               corner9+=24;
+                          std::cout<<endl;
+                          }
+                      corner1=4;
+                      corner2=9;
+                      corner3=13;
+                      corner4=18;
+                      corner5=19;
+                      corner6=20;
+                      corner7=21;
+                      corner8=22 ;
+                      corner9=23 ;
+
+                 for (int i=0; i<nu; i++)
+               {
+                   int winner=i+1;
+                 int h=2;
+                 if(matr[corner1]!='x'||matr[corner2]!='x'||matr[corner3]!='x'||matr[corner4]!='x'||matr[corner5]!='x'||matr[corner6]!='x'||matr[corner7]!='x'||matr[corner8]!='x'||matr[corner9]!='x')
+                 {
+                     h=1;
+                 }
+                     if(h==2)
+                     {
+                         std::cout<<"winner: card_" << winner;
+                          std::cout<<endl;
+                          if(y==ns)
+                          {
+                              return 0;
+                              }
+                              y++;
+                     }
+                     corner1+=24;
+                     corner2+=24;
+                    corner3+=24;
+                    corner4+=24;
+                    corner5+=24;
+                    corner6+=24;
+                    corner7+=24;
+                    corner8+=24;
+                    corner9+=24;
+                     }
+                     corner1=0;
+                      corner2=1;
+                      corner3=2;
+                      corner4=3;
+                      corner5=4;
+                      corner6=5;
+                      corner7=10;
+                      corner8=14 ;
+                      corner9=19 ;
+                         for(int e=0; e<nu; e++)
+                         {
+                               temp = e+1;
+                               cont = 24*temp;
+                               temp_t = 24*e;
+                               int h;
+                 for(h = temp_t; h<cont; h++)
+                              {
+                                  if(matr[h]!='x')
+                                {
+                                    if(ind_vector.at(corner1)==new_vector.at(m))
+                                {
+                                   matr[corner1]='x';
+                               }else if(ind_vector.at(corner2)==new_vector.at(m))
+                               {
+                                   matr[corner2]='x';
+                               }else if(ind_vector.at(corner3)==new_vector.at(m))
+                               {
+                                   matr[corner3]='x';
+                               }else if(ind_vector.at(corner4)==new_vector.at(m))
+                               {
+                                   matr[corner4]='x';
+                               }else if(ind_vector.at(corner5)==new_vector.at(m))
+                               {
+                                   matr[corner5]='x';
+                               }else if(ind_vector.at(corner6)==new_vector.at(m))
+                               {
+                                   matr[corner6]='x';
+                               }else if(ind_vector.at(corner7)==new_vector.at(m))
+                               {
+                                   matr[corner7]='x';
+                               }else if(ind_vector.at(corner8)==new_vector.at(m))
+                               {
+                                   matr[corner8]='x';
+                               }else if(ind_vector.at(corner9)==new_vector.at(m))
+                               {
+                                   matr[corner9]='x';
+                               }
+                               else
+                               {
+                                   matr[h]='-';
+                               }
+                               }
+                               std::cout<<matr[h];
+                          }
+                          corner1+=24;
+                               corner2+=24;
+                               corner3+=24;
+                               corner4+=24;
+                               corner5+=24;
+                               corner6+=24;
+                               corner7+=24;
+                               corner8+=24;
+                               corner9+=24;
+                          std::cout<<endl;
+                          }
+                        corner1=0;
+                        corner2=1;
+                        corner3=2;
+                        corner4=3;
+                        corner5=4;
+                        corner6=5;
+                        corner7=10;
+                        corner8=14;
+                        corner9=19;
+
+                 for (int i=0; i<nu; i++)
+               {
+                   int winner=i+1;
+                 int h=2;
+                 if(matr[corner1]!='x'||matr[corner2]!='x'||matr[corner3]!='x'||matr[corner4]!='x'||matr[corner5]!='x'||matr[corner6]!='x'||matr[corner7]!='x'||matr[corner8]!='x'||matr[corner9]!='x')
+                 {
+                     h=1;
+                 }
+                     if(h==2)
+                     {
+                         std::cout<<"winner: card_" << winner;
+                          std::cout<<endl;
+                          if(y==ns)
+                          {
+                              return 0;
+                              }
+                              y++;
+                     }
+                     corner1+=24;
+                     corner2+=24;
+                    corner3+=24;
+                    corner4+=24;
+                    corner5+=24;
+                    corner6+=24;
+                    corner7+=24;
+                    corner8+=24;
+                    corner9+=24;
+                     }
 
                     }else
                     {
