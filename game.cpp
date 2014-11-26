@@ -19,7 +19,6 @@ int game(const char*arg, const char*ar)
     int temp=0;
     int temp_t=0;
     int nu=0;
-    int num=0;
     std::ifstream text(arg);//toma texto
     std::string lines;
     std::string lin;
@@ -76,7 +75,6 @@ int game(const char*arg, const char*ar)
     int k=0;
     while(k<75)
         {
-                std::string li;
                 std::cout << "Press ENTER to continue...";
                 std::cin.ignore( std::numeric_limits<std::streamsize>::max(), '\n' );
                 std::cout<<"number: " << new_vector.at(m);
@@ -89,38 +87,57 @@ int game(const char*arg, const char*ar)
                 line_vector.at(n)=new_vector.at(m);
                 if(ar=="blackout")
                     {
-                        int tempo=num;
-                         while(std::getline(index,li))
+                         for(int e=0; e<nu; e++)
                          {
-                              //size_t pos = li.find(new_vector.at(m));
-                              //size_t pos_l = li.find("*****");
-                               if(li.find(new_vector.at(m)))//pos==std::string::npos)
+                              size_t pos = index_vector.at(e).find(new_vector.at(m));
+                              size_t pos_l = index_vector.at(e).find("*****");
+                               temp = e+1;
+                               cont = 25*temp;
+                               temp_t = 25*e;
+                               int k;
+                 for(k = temp_t; k<cont; k++)
+                              {
+                                if(matr[k]!='y')
+                                {
+                                   if(pos==std::string::npos)
                                {
-                                   matr[tempo]='x';
-                               }
-                               if(li.find("*****"))//pos_l==std::string::npos)
+                                   matr[k]='x';
+                               }else
+                               if(pos_l==std::string::npos)
                                {
-                                   matr[tempo]='x';
+                                   matr[k]='x';
+                               }else
+                               {
+                                   matr[k]='y';
+                                   pos=std::string::npos;
+                                   pos_l=std::string::npos;
                                }
-                               std::cout<<matr[tempo];
-                                std::cout<<endl;
-                               tempo+=25;
+                               }
                           }
-                          num++;
+                          }
+                          temp = 0;
+                               cont = 0;
+                               temp_t = 0;
                  for (int i=0; i<nu; i++)
                {
                    int winner=i+1;
                  temp = i+1;
                  cont = 25*temp;
                  temp_t = 25*i;
+                 /**if(i!=0)
+                 {
+                     temp_t +=1;
+                 }*/
                  int k;
                  for(k = temp_t; k<cont; k++)
                      {
-                         if(matr[k]!='x')
+                         if(matr[k]!='y')
                          {
                              k=1000000;
                          }
                      }
+                      std::cout<<k;
+                      std::cout<<endl;
                      if(k!=1000001)
                      {
                          std::cout<<"winner: card_" << winner;
